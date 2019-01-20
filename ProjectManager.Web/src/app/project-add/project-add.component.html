@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 mx-auto">
+			<h2>Add Project</h2>
+			<p class="lead">Fill in the form below to add a new project.</p>
+			<form #projectForm="ngForm" (ngSubmit)="save(projectForm.value)">
+
+				<input type="hidden" name="id" [(ngModel)]="project.id">
+
+				<input placeholder="Project Title" [(ngModel)]="project.title" required name="title">
+
+				<br>
+
+				<textarea placeholder="Project Description" [(ngModel)]="project.description" required name="description"></textarea>
+
+				<button mat-raised-button color="primary" color="primary" type="submit" [disabled]="!projectForm.form.valid">Save
+				</button>
+				<a routerLink="/project-list">Cancel</a>
+
+			</form>
+		</div>
+	</div>
+</div>
